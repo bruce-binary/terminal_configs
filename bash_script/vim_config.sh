@@ -11,5 +11,5 @@ if [ -f $vrc ]; then
   rm $vrc
 fi
 
-wget -O ~/.vimrc https://raw.githubusercontent.com/SuyashMBinary/dotfiles/master/.vimrc
+wget -O ~/.vimrc https://raw.githubusercontent.com/wongtiongkiat/terminal_configs/master/bash_script/.vimrc
 vim +PluginInstall +qall
