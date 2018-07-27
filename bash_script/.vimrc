@@ -56,3 +56,8 @@ set laststatus=2
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 " remove ending spaces
 autocmd BufWritePre * %s/\s\+$//e
+
+" keeping histories in another directory
+set undodir=~/.vim/undo//
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
