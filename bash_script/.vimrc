@@ -5,7 +5,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'morhetz/gruvbox'
 
 " syntax
 Plugin 'pangloss/vim-javascript'
@@ -14,15 +13,32 @@ Plugin 'othree/html5.vim'
 Plugin 'vim-perl/vim-perl'
 Plugin 'plasticboy/vim-markdown'
 
+" Status line
+Plugin 'vim-airline/vim-airline'
+
+Plugin 'jiangmiao/auto-pairs'
+
+" tag bar
+Plugin 'majutsushi/tagbar'
+
+" nerd tree
+Plugin 'scrooloose/nerdtree'
+
+" theme
+Plugin 'dracula/vim'
+
 call vundle#end()
 filetype plugin indent on
 
+" airline on
+let g:airline#extensions#tabline#enabled = 1
+
 " aesthetics
 syntax on
-colorscheme gruvbox
+color dracula
+
 set background=dark
 set wrap
-let g:gruvbox_contrast_dark='hard'
 
 " show white spaces as character
 set list
@@ -46,8 +62,15 @@ set ruler
 set cursorcolumn
 set cursorline
 set laststatus=2
-:hi CursorLine ctermfg=Black ctermbg=Green cterm=bold
-:hi CursorColumn ctermfg=Black ctermbg=Green cterm=bold
+":hi CursorLine ctermfg=Black ctermbg=Gray cterm=bold
+":hi CursorColumn ctermfg=Black ctermbg=Gray cterm=bold
+
+" make sure backspaces work
+set backspace=indent,eol,start
+
+" start nerd tree if no files specified
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " highlight search
 :set hlsearch
@@ -61,3 +84,7 @@ autocmd BufWritePre * %s/\s\+$//e
 set undodir=~/.vim/undo//
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
+
+" key bindings
+map <F5> :NERDTreeToggle<CR>
+"nnoremap <Leader>f :NERDTree <CR>
