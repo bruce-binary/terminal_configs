@@ -1,0 +1,11 @@
+Navigation
+
+H - first line of the screen (high)
+M - middle line of the screen (middle)
+L - last line of the screen (low)
+
+G - last line of the file
+gg - first line of the file
+50gg - 50th line from first line of the file 
+
+shifting around screen
