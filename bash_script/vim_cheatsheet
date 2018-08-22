@@ -1,11 +1,52 @@
 Navigation
 
+% - go to the matching value 
+
 H - first line of the screen (high)
 M - middle line of the screen (middle)
 L - last line of the screen (low)
 
 G - last line of the file
 gg - first line of the file
-50gg - 50th line from first line of the file 
 
-shifting around screen
+Shifting around screen
+
+zz - center screen based on cursor
+zt - to the top of the screen
+zb - to the bottom of the screen
+
+Insert mode
+
+i - insert before the cursor
+I - insert at the beginning of the line
+a - insert (append) after the cursor
+A - insert (append) at the end of the line
+o - append (open) a new line below the current line
+O - append (open) a new line above the current line
+ea - insert (append) at the end of the word
+
+Cutting
+dw - delete until next word
+d$ - delete until end of the line;
+dt(char) - delete until (char);
+
+Yanking
+yy - yank current line
+yt$ - yank from cursor to the end of the line
+yt(char) - yank until (char)
+
+Navigate around tabs
+:tabe - open new tab
+:tabn (index) - go to tab (index)
+:tabm (index) - swap index of current tab with tab (index)
+gt - move to forward tab
+gT - move to previous tab
+
+
+p - paste after cursor
+P - paste before cursor
+
+
+Sources
+
+https://vim.rtorr.com/
