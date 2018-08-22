@@ -12,11 +12,12 @@ Plugin 'elzr/vim-json'
 Plugin 'othree/html5.vim'
 Plugin 'vim-perl/vim-perl'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'craigemery/vim-autotag'
 
 " Status line
 Plugin 'vim-airline/vim-airline'
 
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'raimondi/delimitmate'
 
 " tag bar
 Plugin 'majutsushi/tagbar'
@@ -64,6 +65,8 @@ set cursorline
 set laststatus=2
 ":hi CursorLine ctermfg=Black ctermbg=Gray cterm=bold
 ":hi CursorColumn ctermfg=Black ctermbg=Gray cterm=bold
+
+set scrolloff=15 " Keep 3 lines below and above the cursor"
 
 " make sure backspaces work
 set backspace=indent,eol,start
