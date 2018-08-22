@@ -1,5 +1,4 @@
 Navigation
-
 % - go to the matching value 
 
 H - first line of the screen (high)
@@ -10,7 +9,6 @@ G - last line of the file
 gg - first line of the file
 
 Shifting around screen
-
 zz - center screen based on cursor
 zt - to the top of the screen
 zb - to the bottom of the screen
@@ -25,7 +23,6 @@ Buffer Navigation
 :e#(index) - go to buffer of (index)
 
 Insert mode
-
 i - insert before the cursor
 I - insert at the beginning of the line
 a - insert (append) after the cursor
@@ -56,6 +53,5 @@ gT - move to previous tab
 
 
 Sources
-
 https://vim.rtorr.com/
 https://ricostacruz.com/til/navigate-code-with-ctags
