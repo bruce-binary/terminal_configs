@@ -15,6 +15,15 @@ zz - center screen based on cursor
 zt - to the top of the screen
 zb - to the bottom of the screen
 
+CTags
+:tag (subroutine/class) - jump to tag
+vim -t <tag> - open vim at tag location
+C+] - jump into definition
+C+t - jump back from definition
+
+Buffer Navigation
+:e#(index) - go to buffer of (index)
+
 Insert mode
 
 i - insert before the cursor
@@ -35,6 +44,9 @@ yy - yank current line
 yt$ - yank from cursor to the end of the line
 yt(char) - yank until (char)
 
+p - paste after cursor
+P - paste before cursor
+
 Navigate around tabs
 :tabe - open new tab
 :tabn (index) - go to tab (index)
@@ -43,10 +55,7 @@ gt - move to forward tab
 gT - move to previous tab
 
 
-p - paste after cursor
-P - paste before cursor
-
-
 Sources
 
 https://vim.rtorr.com/
+https://ricostacruz.com/til/navigate-code-with-ctags
