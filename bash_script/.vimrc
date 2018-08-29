@@ -88,6 +88,24 @@ set undodir=~/.vim/undo//
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 
+" functions
+
+" find ctag tags
+function! FindTag()
+    let co = matchstr(expand('<cword>'), '[a-zA-Z0-9._^\\]*$')
+    if matchstr(expand('<cWORD>'), '[$@%]'.co)  == ''
+        let tag_string = split(execute("tselect ".co), "\n")[1]
+        let tag_file_name = matchstr(tag_string, '[a-zA-Z0-9._^\\]*$')
+        if tag_file_name == expand('%:t')
+            :exec("tag ".co)
+        else
+            :exec("tab tag ".co)
+        endif
+    else
+        normal! gD
+    endif
+endfunction
+
 " key bindings
 map <F5> :NERDTreeToggle<CR>
-"nnoremap <Leader>f :NERDTree <CR>
+noremap <C-]> :call FindTag()<CR>
