@@ -17,7 +17,11 @@ Plugin 'craigemery/vim-autotag'
 " Status line
 Plugin 'vim-airline/vim-airline'
 
+" auto bracket completion
 Plugin 'raimondi/delimitmate'
+
+" vim easy-motion
+Plugin 'easymotion/vim-easymotion'
 
 " tag bar
 Plugin 'majutsushi/tagbar'
@@ -88,11 +92,13 @@ set undodir=~/.vim/undo//
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 
+set tags=./tags;
+
 " functions
 function! ToggleLine()
     set number!
-    :IndentLinesToggle
 endfunction
+
 
 function! FindTag()
     let co = matchstr(expand('<cword>'), '[a-zA-Z0-9._^\\]*$')
@@ -109,7 +115,11 @@ function! FindTag()
     endif
 endfunction
 
+" default function calls
+call ToggleLine()
+
 " key bindings
+map <Leader> <Plug>(easymotion-prefix)
 map <F5> :NERDTreeToggle<CR>
 noremap <C-]> :call FindTag()<CR>
-noremap <F3> :call ToggleCopy()<CR>
+noremap <F3> :call ToggleLine()<CR>
