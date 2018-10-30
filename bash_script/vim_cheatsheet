@@ -75,6 +75,11 @@ Tabs (workspace more discussion [here](https://stackoverflow.com/questions/26708
 :tabs - list all tabs
 gt(normal mode) - go to next tab 
 
+Window splitting
+:new <file>
+set splitbelow
+set splitright
+
 
 Sources
 https://vim.rtorr.com/
