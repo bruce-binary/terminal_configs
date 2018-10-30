@@ -86,6 +86,22 @@ my - make y a local mark (normal mode)
 `Y - to go to the marker (normal mode)
 :marks - to see marks
 
+Folding
+zc - fold code
+zo - open fold
+zM - fold everything
+zR - unfold everything
+
+Registers
+can be used in visual mode
+“ay - yank into register a (normal mode)
+“ap - paste from register a (normal mode)
+:registers - list all registers
+
+Macro
+q - start record
+q - stop record
+
 Sources
 https://vim.rtorr.com/
 https://ricostacruz.com/til/navigate-code-with-ctags
