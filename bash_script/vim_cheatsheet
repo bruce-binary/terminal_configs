@@ -80,6 +80,11 @@ Window splitting
 set splitbelow
 set splitright
 
+Marks 
+mY - make Y a global mark (normal mode)
+my - make y a local mark (normal mode)
+`Y - to go to the marker (normal mode)
+:marks - to see marks
 
 Sources
 https://vim.rtorr.com/
