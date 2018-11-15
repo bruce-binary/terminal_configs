@@ -51,11 +51,12 @@ gT - move to previous tab
 ## Working with multiple things
 
 Current Window
-:e (file) - load a new file in window
 :e <tab> - list files from current directory
 
 Buffers
+:e (file) - load a new file in buffer
 :badd <file> - load to buffer
+:bd - close current buffer
 :b(index) - to buffer (index)
 :bnext - next buffer
 :bprevious - previous buffer
