@@ -125,22 +125,5 @@ map <F5> :NERDTreeToggle<CR>
 noremap <C-]> :call FindTag()<CR>
 noremap <F3> :call ToggleLine()<CR>
 
-" alias
-" set current work directory to the current file so that <tab> can be used
-" without having to type in the full path
-command Development silent! lcd /home/git/regentmarkets/
-command Bomrpc silent! lcd /home/git/regentmarkets/bom-rpc/
-command Bomplatform silent! lcd /home/git/regentmarkets/bom-platform/
-command Bo silent! lcd /home/git/regentmarkets/bom-backoffice/
-command Bom silent! lcd /home/git/regentmarkets/bom/
-command Bomtransaction silent! lcd /home/git/regentmarkets/bom-transaction/
-command Bompricing silent! lcd /home/git/regentmarkets/bom-pricing/
-command Bomcpan silent! lcd /home/git/regentmarkets/bomcpan/
-command Bomevents silent! lcd /home/git/regentmarkets/bom-events/
-command Bomuser silent! lcd /home/git/regentmarkets/bom-user/
-command Bomoauth silent! lcd /home/git/regentmarkets/bom-oauth/
-command Bompostgres silent! lcd /home/git/regentmarkets/bom-postgres/
-command Bompostgresclientdb silent! lcd /home/git/regentmarkets/bom-postgres-clientdb/
-
 
 
