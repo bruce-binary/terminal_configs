@@ -104,6 +104,16 @@ function! ToggleLineNumbers()
     set number!
 endfunction
 
+"define :Tidy command to run perltidy on visual selection || entire buffer"
+command -range=% -nargs=* Tidy <line1>,<line2>!perltidy
+
+"run :Tidy on entire buffer and return cursor to (approximate) original position"
+fun DoTidy()
+    let l = line(".")
+    let c = col(".")
+    :Tidy
+    call cursor(l, c)
+endfun
 
 function! FindTag()
     let co = matchstr(expand('<cword>'), '[a-zA-Z0-9._^\\]*$')
