@@ -16,6 +16,9 @@ Plugin 'terryma/vim-smooth-scroll'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 
+" See git changes
+Plugin 'airblade/vim-gitgutter'
+
 " Themes
 Plugin 'dracula/vim'
 
