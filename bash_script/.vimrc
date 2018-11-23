@@ -15,6 +15,9 @@ Plugin 'craigemery/vim-autotag'
 Plugin 'terryma/vim-smooth-scroll'
 Plugin 'kien/ctrlp.vim'
 
+" Themes
+Plugin 'dracula/vim'
+
 " Status line
 Plugin 'vim-airline/vim-airline'
 
@@ -38,7 +41,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 " aesthetics
 syntax on
-color dracula
 
 set background=dark
 set wrap
