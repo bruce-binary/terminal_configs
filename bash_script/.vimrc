@@ -175,6 +175,7 @@ let g:syntastic_enable_perl_checker = 1
 " key bindings
 map <Leader> <Plug>(easymotion-prefix)
 map <F5> :NERDTreeToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 noremap <C-]> :call FindTag()<CR>
