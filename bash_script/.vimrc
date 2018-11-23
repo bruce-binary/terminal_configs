@@ -149,6 +149,9 @@ autocmd FileType qf map <buffer> dd :RemoveQFItem<cr>
 " default function calls
 call ToggleLineNumbers()
 
+
+set updatetime=500
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
