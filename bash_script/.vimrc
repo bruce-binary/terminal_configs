@@ -30,9 +30,6 @@ Plugin 'majutsushi/tagbar'
 " nerd tree
 Plugin 'scrooloose/nerdtree'
 
-" theme
-Plugin 'dracula/vim'
-
 call vundle#end()
 filetype plugin indent on
 
