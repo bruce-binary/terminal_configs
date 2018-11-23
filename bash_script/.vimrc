@@ -6,13 +6,14 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-" syntax
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
 Plugin 'othree/html5.vim'
 Plugin 'vim-perl/vim-perl'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'craigemery/vim-autotag'
+Plugin 'terryma/vim-smooth-scroll'
+Plugin 'kien/ctrlp.vim'
 
 " Status line
 Plugin 'vim-airline/vim-airline'
@@ -44,6 +45,9 @@ color dracula
 
 set background=dark
 set wrap
+
+" Allow vim to switch buffer without need to save
+set hidden
 
 " show white spaces as character
 set list
@@ -96,7 +100,7 @@ set directory=~/.vim/swap//
 set tags=./tags;
 
 " functions
-function! ToggleLine()
+function! ToggleLineNumbers()
     set number!
 endfunction
 
@@ -116,14 +120,34 @@ function! FindTag()
     endif
 endfunction
 
+" When using `dd` in the quickfix list, remove the item from the quickfix list.
+function! RemoveQFItem()
+  let curqfidx = line('.') - 1
+  let qfall = getqflist()
+  call remove(qfall, curqfidx)
+  call setqflist(qfall, 'r')
+  execute curqfidx + 1 . "cfirst"
+  :copen
+endfunction
+:command! RemoveQFItem :call RemoveQFItem()
+" Use map <buffer> to only map dd in the quickfix window. Requires +localmap
+autocmd FileType qf map <buffer> dd :RemoveQFItem<cr>
+
 " default function calls
-call ToggleLine()
+call ToggleLineNumbers()
 
 " key bindings
 map <Leader> <Plug>(easymotion-prefix)
 map <F5> :NERDTreeToggle<CR>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 noremap <C-]> :call FindTag()<CR>
-noremap <F3> :call ToggleLine()<CR>
+noremap <F3> :call ToggleLineNumbers()<CR>
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 15, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 15, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 15, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 15, 4)<CR>
 
-
+" Shortcut to open the quickfix panel
+nnoremap <expr> <silent> <F4>   (&diff ? "]c" : ":copen\<CR>")
 
