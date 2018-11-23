@@ -19,8 +19,11 @@ Plugin 'scrooloose/syntastic'
 " See git changes
 Plugin 'airblade/vim-gitgutter'
 
+" Sensible commenting capabilities
+Plugin 'scrooloose/nerdcommenter'
+
 " Themes
-Plugin 'dracula/vim'
+Plugin 'tomasr/molokai'
 
 " Status line
 Plugin 'vim-airline/vim-airline'
@@ -45,6 +48,8 @@ let g:airline#extensions#tabline#enabled = 1
 
 " aesthetics
 syntax on
+" Molokai theme settings
+let g:rehash256 = 1
 
 set background=dark
 set wrap
@@ -149,9 +154,13 @@ autocmd FileType qf map <buffer> dd :RemoveQFItem<cr>
 " default function calls
 call ToggleLineNumbers()
 
+" NERDCommenter settings
+let g:NERDSpaceDelims = 1
 
+" Git gutter update interval
 set updatetime=500
 
+" Syntastic settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
