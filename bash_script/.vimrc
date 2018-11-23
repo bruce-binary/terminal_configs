@@ -14,6 +14,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'craigemery/vim-autotag'
 Plugin 'terryma/vim-smooth-scroll'
 Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
 
 " Themes
 Plugin 'dracula/vim'
@@ -135,6 +136,17 @@ autocmd FileType qf map <buffer> dd :RemoveQFItem<cr>
 " default function calls
 call ToggleLineNumbers()
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_perl_checkers = ['perl', 'podchecker', 'perlcritic']
+let g:syntastic_enable_perl_checker = 1
+
 " key bindings
 map <Leader> <Plug>(easymotion-prefix)
 map <F5> :NERDTreeToggle<CR>
@@ -149,4 +161,6 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 15, 4)<CR>
 
 " Shortcut to open the quickfix panel
 nnoremap <expr> <silent> <F4>   (&diff ? "]c" : ":copen\<CR>")
+" Shortcut to open location panel
+nnoremap <expr> <silent> <F2>   (&diff ? "]c" : ":lopen\<CR>")
 
