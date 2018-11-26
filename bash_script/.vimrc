@@ -45,6 +45,7 @@ filetype plugin indent on
 
 " airline on
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " aesthetics
 syntax on
