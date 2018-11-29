@@ -1,120 +1,212 @@
-set nocompatible
-filetype off
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-Plugin 'VundleVim/Vundle.vim'
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
-Plugin 'pangloss/vim-javascript'
-Plugin 'elzr/vim-json'
-Plugin 'othree/html5.vim'
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" plugin for perl syntax, template toolkit
 Plugin 'vim-perl/vim-perl'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'craigemery/vim-autotag'
-Plugin 'terryma/vim-smooth-scroll'
+" plugin for javascript syntax
+Plugin 'pangloss/vim-javascript'
+" plugin for json syntax
+Plugin 'elzr/vim-json'
+" plugin to easy find file
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-
-" See git changes
-Plugin 'airblade/vim-gitgutter'
-
-" Sensible commenting capabilities
-Plugin 'scrooloose/nerdcommenter'
-
-" Themes
-Plugin 'tomasr/molokai'
-
+" tree explorer
+Plugin 'scrooloose/nerdtree'
+" NERDTree git integration
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Status line
 Plugin 'vim-airline/vim-airline'
-
-" auto bracket completion
-Plugin 'raimondi/delimitmate'
-
-" vim easy-motion
-Plugin 'easymotion/vim-easymotion'
-
-" tag bar
+" HTML Syntax
+Plugin 'othree/html5.vim'
+" Mojo html.ep
+Plugin 'yko/mojo.vim'
+" Markdown highlighter
+Plugin 'plasticboy/vim-markdown'
+" Butter smooth scrolling
+Plugin 'terryma/vim-smooth-scroll'
+" See git changes
+Plugin 'airblade/vim-gitgutter'
+" Sensible commenting capabilities
+Plugin 'scrooloose/nerdcommenter'
+" Themes
+Plugin 'tomasr/molokai'
+" Async Linting
+Plugin 'w0rp/ale'
+" Code tags
 Plugin 'majutsushi/tagbar'
+map <Leader>t :CtrlPBuffer<CR>
+ let g:ctrlp_map = '<C-p>'
+ let g:ctrlp_working_path_mode = 0 " don’t manage working directory.
+ let g:ctrlp_use_caching = 1
+ let g:ctrlp_by_filename = 1
+ let g:ctrlp_custom_ignore = {
+ \ 'dir':  '\v\c\.(git|svn)$|cgi/t/sandbox|cover_db',
+ \ 'file': '\v\c\.(swf|bak|png|gif|js|mov|ico|jpg|pdf|jrxml)$'
+  \ }
 
-" nerd tree
-Plugin 'scrooloose/nerdtree'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
-call vundle#end()
-filetype plugin indent on
-
-" airline on
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-
-" aesthetics
-syntax on
-" Molokai theme settings
-let g:rehash256 = 1
-
-set background=dark
-set wrap
-
-" Allow vim to switch buffer without need to save
-set hidden
-
-" show white spaces as character
-set list
-set listchars=tab:>-,trail:-
-
-" spacing settings
-set ts=4 sw=4 et
-set softtabstop=4
 set autoindent
-
-set mouse=c
-" searches
-set incsearch
-set ignorecase
-set expandtab
-
-" ruler is the bottom right line tab thing
-set ruler
-
-" show cursor vertical and horizontally
+set backspace=indent,eol,start
+set cindent " set smartindent
+set cmdheight=2
 set cursorcolumn
 set cursorline
+set errorformat=\"../../%f\"\\,%*[^0-9]%l:\ %m
+set expandtab
+set hidden
+set hlsearch
+set ignorecase
+set incsearch
 set laststatus=2
-":hi CursorLine ctermfg=Black ctermbg=Gray cterm=bold
-":hi CursorColumn ctermfg=Black ctermbg=Gray cterm=bold
+set list
+set listchars=tab:>-,trail:-
+set mouse=c
+set nowrap
+set ruler
+set scrolloff=5
+set shiftwidth=4
+set showcmd
+set showmatch
+set smarttab
+"set statusline=%F%m%r%h%w\ [%{&ff}]\ %y\ [CHR=%b/0x%B]\ [POS=%04l,%03c(%03v)]\ [%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
+set t_Co=256
+set tags=tags;/
+set virtualedit=block
+set wrap
+"set nu
+"set spell spelllang=en_us
+set colorcolumn=80
+syntax on
 
-set scrolloff=15 " Keep 3 lines below and above the cursor"
+colorscheme desert
 
-" make sure backspaces work
-set backspace=indent,eol,start
+highlight   CursorColumn  term=NONE    cterm=none ctermbg=232
+highlight   CursorLine    term=NONE    cterm=bold ctermbg=8
+highlight   FoldColumn                            ctermbg=8  ctermfg=14
+highlight   Folded                                ctermbg=8  ctermfg=14
+highlight   Search        term=reverse cterm=bold ctermbg=11 ctermfg=0
+highlight   Visual        term=NONE    cterm=bold ctermbg=10 ctermfg=8
+highlight   ColorColumn                           ctermbg=8
 
-" start nerd tree if no files specified
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" highlight search
-:set hlsearch
+"" makes Omni Completion less pinky :P
+highlight   Pmenu                                 ctermbg=2  ctermfg=0
+highlight   PmenuSel                              ctermbg=7  ctermfg=0
+highlight   PmenuSbar                             ctermbg=0  ctermfg=7
+highlight   PmenuThumb                            ctermbg=7  ctermfg=0
 
 " :help last-position-jump
-" autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
-" remove ending spaces
-autocmd BufWritePre * %s/\s\+$//e
+"""""""""""""""""""
+" Plugin Config
+"""""""""""""""""""
 
-" keeping histories in another directory
-set undodir=~/.vim/undo//
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
+map <F5> :NERDTreeToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 
-set tags=./tags;
+" NERDCommenter settings
+let g:NERDSpaceDelims = 1
 
-" functions
-function! ToggleLineNumbers()
-    set number!
-endfunction
+" Git gutter update interval
+set updatetime=500
+
+" Smooth scroll config
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 15, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 15, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 15, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 15, 4)<CR>
+
+"ALE perl checking
+let g:ale_perl_perlcritic_profile = "/home/git/regentmarkets/cpan/rc/.perlcriticrc"
+let g:ale_perl_perltidy_profile = "/home/git/regentmarkets/cpan/rc/.perltidyrc"
+let g:ale_linters = { 'perl': ['perl','perlcritic','perltidy'] }
+let g:ale_fixers = { 'perl':['perltidy'] }
+let g:airline#extensions#ale#enabled = 1
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 1 " Less distracting when opening a new file
+let g:ale_fix_on_save = 1
+
+""""""""""""""""""""""
+" Custom Key Mappings
+""""""""""""""""""""""
+
+nnoremap <C-L> :noh<CR><C-L>
+inoremap jj <Esc>
+nnoremap <Leader>r :source ~/.vimrc<CR>
+nnoremap <Leader><Leader>r :e ~/.vimrc<CR>
+
+map <Leader>gs :Gstatus<CR>
+map <Leader>gc :Gcommit<CR>
+map <Leader>gm :Gcommit --amend<CR>
+map <Leader>gll :Git log<CR>
+map <Leader>glp :Git log -p<CR>
+map <Leader>gb :Gblame<CR>
+map <Leader>gdd :Git diff<CR>
+map <Leader>gdm :Git diff %<CR>
+map <Leader>gdf :Gdiff<CR>
+map <Leader>gg :Git
+
+map <Leader>] :wa<bar><UP><CR>
+
+nmap <F1> <Esc>
+imap <F1> <Esc>
+
+autocmd FileType gitcommit autocmd! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+
+" navigate display line when wrap is set
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
+
+
+"""""""""""""""""""
+" Custom Functions
+"""""""""""""""""""
+
+"kill buffers with out closing windows
+command! Bd b#|bd#
 
 "define :Tidy command to run perltidy on visual selection || entire buffer"
-command! -range=% -nargs=* Tidy <line1>,<line2>!perltidy
+command! -range=% -nargs=* Tidy <line1>,<line2>!perltidy -pro="/home/git/regentmarkets/cpan/rc/.perltidyrc"
 
 "run :Tidy on entire buffer and return cursor to (approximate) original position"
 function! DoTidy()
@@ -124,70 +216,7 @@ function! DoTidy()
     call cursor(l, c)
 endfun
 
-function! FindTag()
-    let co = matchstr(expand('<cword>'), '[a-zA-Z0-9._^\\]*$')
-    if matchstr(expand('<cWORD>'), '[$@%]'.co)  == ''
-        let tag_string = split(execute("tselect ".co), "\n")[1]
-        let tag_file_name = matchstr(tag_string, '[a-zA-Z0-9._^\\]*$')
-        if tag_file_name == expand('%:t')
-            :exec("tag ".co)
-        else
-            :exec("tab tag ".co)
-        endif
-    else
-        normal! gD
-    endif
-endfunction
 
-" When using `dd` in the quickfix list, remove the item from the quickfix list.
-function! RemoveQFItem()
-  let curqfidx = line('.') - 1
-  let qfall = getqflist()
-  call remove(qfall, curqfidx)
-  call setqflist(qfall, 'r')
-  execute curqfidx + 1 . "cfirst"
-  :copen
-endfunction
-:command! RemoveQFItem :call RemoveQFItem()
-" Use map <buffer> to only map dd in the quickfix window. Requires +localmap
-autocmd FileType qf map <buffer> dd :RemoveQFItem<cr>
-
-" default function calls
-call ToggleLineNumbers()
-
-" NERDCommenter settings
-let g:NERDSpaceDelims = 1
-
-" Git gutter update interval
-set updatetime=500
-
-" Syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_perl_checkers = ['perl', 'podchecker', 'perlcritic']
-let g:syntastic_enable_perl_checker = 1
-
-" key bindings
-map <Leader> <Plug>(easymotion-prefix)
-map <F5> :NERDTreeToggle<CR>
-nmap <F8> :TagbarToggle<CR>
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-noremap <C-]> :call FindTag()<CR>
-noremap <F3> :call ToggleLineNumbers()<CR>
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 15, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 15, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 15, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 15, 4)<CR>
-
-" Shortcut to open the quickfix panel
-nnoremap <expr> <silent> <F4>   (&diff ? "]c" : ":copen\<CR>")
-" Shortcut to open location panel
-nnoremap <expr> <silent> <F2>   (&diff ? "]c" : ":lopen\<CR>")
-
+"""""""""""""""""""
+" Color Theme
+"""""""""""""""""""
