@@ -49,6 +49,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tomasr/molokai'
 " Async Linting
 Plugin 'w0rp/ale'
+Plugin 'dyng/ctrlsf.vim'
 " Code tags
 Plugin 'majutsushi/tagbar'
 map <Leader>t :CtrlPBuffer<CR>
@@ -109,6 +110,8 @@ set wrap
 set colorcolumn=80
 syntax on
 
+colorscheme desert
+
 highlight   CursorColumn  term=NONE    cterm=none ctermbg=232
 highlight   CursorLine    term=NONE    cterm=bold ctermbg=8
 highlight   FoldColumn                            ctermbg=8  ctermfg=14
@@ -155,6 +158,22 @@ let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 1 " Less distracting when opening a new file
 let g:ale_fix_on_save = 1
+
+" Display buffer on top, along with its number
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+let g:ctrlsf_auto_focus = {
+      \ "at": "start"
+      \ }
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 """"""""""""""""""""""
 " Custom Key Mappings
@@ -218,4 +237,5 @@ endfun
 """""""""""""""""""
 " Color Theme
 """""""""""""""""""
+
 color molokai
