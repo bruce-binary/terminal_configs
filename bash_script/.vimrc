@@ -103,6 +103,7 @@ set shiftwidth=4
 set showcmd
 set showmatch
 set smarttab
+set splitright
 "set statusline=%F%m%r%h%w\ [%{&ff}]\ %y\ [CHR=%b/0x%B]\ [POS=%04l,%03c(%03v)]\ [%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
 set t_Co=256
 set tags=tags;/
