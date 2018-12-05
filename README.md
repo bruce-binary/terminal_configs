@@ -65,5 +65,5 @@ Line select: `V`
 # Neat Commands
 
  - Execute perl tidy on current file: `:Tidy` (usually you won't need to do this because saving the file executes perl tidy)
-
+ - Open terminal: `:vert term`, `<c-w> :q` to close
  
