@@ -33,6 +33,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Status line
 Plugin 'vim-airline/vim-airline'
+" Buffer explorer (works with mouse clicks)
+Plugin 'fholgado/minibufexpl.vim'
 " HTML Syntax
 Plugin 'othree/html5.vim'
 " Mojo html.ep
@@ -86,13 +88,14 @@ set cursorline
 set errorformat=\"../../%f\"\\,%*[^0-9]%l:\ %m
 set expandtab
 set hidden
+set number
 set hlsearch
 set ignorecase
 set incsearch
 set laststatus=2
 set list
 set listchars=tab:>-,trail:-
-set mouse=c
+set mouse=a
 set nowrap
 set ruler
 set scrolloff=5
@@ -133,8 +136,12 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 " Plugin Config
 """""""""""""""""""
 
-map <F5> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
+
+" NERDTree Settings
+map <F5> :NERDTreeToggle<CR>
+let NERDTreeShowHidden = 1
+let g:NERDTreeMouseMode = 3
 
 " NERDCommenter settings
 let g:NERDSpaceDelims = 1
@@ -148,6 +155,9 @@ noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 15, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 15, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 15, 4)<CR>
 
+" Maximizer
+let g:maximizer_set_default_mapping = 0
+
 "ALE perl checking
 let g:ale_perl_perlcritic_profile = "/home/git/regentmarkets/cpan/rc/.perlcriticrc"
 let g:ale_perl_perltidy_profile = "/home/git/regentmarkets/cpan/rc/.perltidyrc"
@@ -160,8 +170,10 @@ let g:ale_lint_on_enter = 1 " Less distracting when opening a new file
 let g:ale_fix_on_save = 1
 
 " Display buffer on top, along with its number
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#buffer_nr_show = 1
+
+let g:miniBufExplUseSingleClick = 1
 
 let g:ctrlsf_auto_focus = {
       \ "at": "start"
@@ -233,6 +245,14 @@ function! DoTidy()
     call cursor(l, c)
 endfun
 
+function! ToggleLine()
+    set number!
+endfunction
+
+noremap <F3> :call ToggleLine()<CR>
+noremap <Leader>bd :Bd<CR>
+" Close all buffers except this one
+noremap <Leader>ba :bufdo Bd<CR>
 
 """""""""""""""""""
 " Color Theme
