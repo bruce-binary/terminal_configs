@@ -132,6 +132,11 @@ highlight   PmenuThumb                            ctermbg=7  ctermfg=0
 " :help last-position-jump
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
+" keeping histories in another directory
+set undodir=~/.vim/undo//
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+
 """""""""""""""""""
 " Plugin Config
 """""""""""""""""""
