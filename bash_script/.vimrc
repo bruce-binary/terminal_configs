@@ -181,6 +181,8 @@ let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 1 " Less distracting when opening a new file
 let g:ale_fix_on_save = 1
 
+let g:tagbar_singleclick = 1
+
 " Display buffer on top, along with its number
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#buffer_nr_show = 1
