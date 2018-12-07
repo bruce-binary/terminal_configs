@@ -54,6 +54,7 @@ Plugin 'w0rp/ale'
 Plugin 'dyng/ctrlsf.vim'
 " Code tags
 Plugin 'majutsushi/tagbar'
+Plugin 'lvht/tagbar-markdown'
 map <Leader>t :CtrlPBuffer<CR>
  let g:ctrlp_map = '<C-p>'
  let g:ctrlp_working_path_mode = 0 " don’t manage working directory.
