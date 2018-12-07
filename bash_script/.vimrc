@@ -114,6 +114,11 @@ set wrap
 set colorcolumn=80
 syntax on
 
+" Sensible word wrapping
+set wrap
+set linebreak
+set nolist  " list disables linebreak
+
 colorscheme desert
 
 highlight   CursorColumn  term=NONE    cterm=none ctermbg=232
@@ -192,6 +197,8 @@ nmap     <C-F>p <Plug>CtrlSFPwordPath
 nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
+let g:vim_markdown_folding_disabled = 1
 
 """"""""""""""""""""""
 " Custom Key Mappings
