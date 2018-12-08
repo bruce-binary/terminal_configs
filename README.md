@@ -60,7 +60,8 @@ In Tagbar:
  
 ## Buffers
 
- - Properly close buffer `:Bd`
+ - Properly close buffer: `\w`
+ - Close all buffers but this: `\aw`
  - Go to buffer `:b1`, where `1` is buffer id
  - Next buffer: `bn`
  - Previous buffer: `bp`
