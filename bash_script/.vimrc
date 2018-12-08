@@ -35,6 +35,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-airline/vim-airline'
 " Buffer explorer (works with mouse clicks)
 Plugin 'fholgado/minibufexpl.vim'
+Plugin 'BufOnly.vim'
 " HTML Syntax
 Plugin 'othree/html5.vim'
 " Mojo html.ep
@@ -113,12 +114,13 @@ set wrap
 "set nu
 "set spell spelllang=en_us
 set colorcolumn=80
-syntax on
 
 " Sensible word wrapping
 set wrap
 set linebreak
 set nolist  " list disables linebreak
+
+syntax on
 
 colorscheme desert
 
@@ -211,6 +213,8 @@ nnoremap <C-L> :noh<CR><C-L>
 inoremap jj <Esc>
 nnoremap <Leader>r :source ~/.vimrc<CR>
 nnoremap <Leader><Leader>r :e ~/.vimrc<CR>
+vnoremap <C-l> "hy/<C-r>h<CR>
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 map <Leader>gs :Gstatus<CR>
 map <Leader>gc :Gcommit<CR>
@@ -261,14 +265,21 @@ function! DoTidy()
     call cursor(l, c)
 endfun
 
-function! ToggleLine()
+function! TogglePasteMode()
     set number!
+    if &mouse == 'a'
+        " disable mouse
+        set mouse=
+    else
+        " enable mouse everywhere
+        set mouse=a
+    endif
 endfunction
 
-noremap <F3> :call ToggleLine()<CR>
-noremap <Leader>bd :Bd<CR>
+noremap <F3> :call TogglePasteMode()<CR>
+noremap <Leader>w :Bd<CR>
 " Close all buffers except this one
-noremap <Leader>ba :bufdo Bd<CR>
+noremap <Leader>aw :BufOnly<CR>
 
 """""""""""""""""""
 " Color Theme
