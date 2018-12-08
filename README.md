@@ -1,4 +1,4 @@
-The Ultimate Perl Vim Configuration
+Bruce's Ultimate Perl Vim Configuration
 ===================================
 
 # Vim App
@@ -53,6 +53,26 @@ The Ultimate Perl Vim Configuration
  
 # Search/Replace in Files
 
+## Within file
+
+- Search: `?foo <--> /foo`, on `[enter]`, press `N <--> n` to jump between matches
+- 	- Clear search highlight: `:noh` 
+- Replace: `:%s/source/target/gcI`
+	- `%` search whole file
+        - `'<,'>` search selection (visual select)
+        - default to search current line
+	- `c` asks for confirmation, default to replace all
+		- on `c+[enter]`, `y` `n` to replace, `q` to stop
+	- `I` case sensitive, default to insensitive
+
+### In visual mode:
+
+ - search selection: `<c-l>`
+ - search+replace selection with confirmation: `<c-r>`
+
+### In normal mode:
+ - Search word under cursor: `*`
+
 # Selecting
 
 Select inner block of matching brace: `vi{`
@@ -61,6 +81,11 @@ Select inner block of matching brace: `vi{`
 
 Column select: `ctrl-v`
 Line select: `V`
+
+# Change Settings
+
+Edit `.vimrc`: `\\r`
+Source `.vimrc`: `\r`
 
 # Neat Commands
 
