@@ -34,7 +34,14 @@ Bruce's Ultimate Perl Vim Configuration
    - search folder by name: `/foo` and `?foo` as you would normally search in a file
    - create/delete file/folder: `m`
    - refresh tree: `r`
-   
+
+## Jump to Definition
+
+You need to have ctags configured
+
+ - Go to definition: `ctrl-]`, `ctrl-t` to go back
+ - Navigate around jumps: `ctrl-o <--> ctrl-i`
+ 
 ## In File
 
  - Character: `h j k l`
@@ -44,13 +51,33 @@ Bruce's Ultimate Perl Vim Configuration
  - Prev/Next occurence of word under cursor: `# <--> *`
  - Page: `^d v--^ ^u`
  
+## Code Outline
+
+Launch TagBar: `<F8>`
+In Tagbar:
+ - Jump to file without closing the panel: `p`
+ - Go to area and close panel `<cr>`
+ 
 ## Buffers
 
  - Properly close buffer `:Bd`
  - Go to buffer `:b1`, where `1` is buffer id
  - Next buffer: `bn`
  - Previous buffer: `bp`
- 
+
+# Error Checking
+
+Errors then show up in the location panel, which you can open `:lopen` and close `:lclose`.
+
+# Editing Code
+
+## Code Commenting
+
+ - comment line: `\cl`
+ - minimal comment block: `\cm`
+ - uncomment line/block `\cu`
+ - append comment: `\cA`
+
 # Search/Replace in Files
 
 ## Within file
@@ -73,6 +100,19 @@ Bruce's Ultimate Perl Vim Configuration
 ### In normal mode:
  - Search word under cursor: `*`
 
+# Copy Pasting 
+
+## Within Vim
+
+copy (yank): `y`
+paste: `p`
+
+## Outside Vim
+
+Copy the whole file: leave vim and use `cat filename`, then copy from terminal.
+
+If your vim doesn't copy to clipboard, a hack is to copy from the terminal. `<F3>` disables mouse input and line numbers, but allows you to select the text to copy. Press `<F3` to toggle back again.
+
 # Selecting
 
 Select inner block of matching brace: `vi{`
@@ -81,6 +121,17 @@ Select inner block of matching brace: `vi{`
 
 Column select: `ctrl-v`
 Line select: `V`
+
+# Code Folding
+
+Define Folds
+- Fold visual select: `zf`
+- Fold all within `{}` block: `zfa{`
+- Delete fold: `zd`
+
+Using Folds
+- close/open fold `zc`/`zo`
+- close/open all folds: `zM`/`zR`
 
 # Change Settings
 
