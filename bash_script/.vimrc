@@ -113,7 +113,11 @@ set virtualedit=block
 set wrap
 "set nu
 "set spell spelllang=en_us
-set colorcolumn=80
+
+" Highlight only the column that exceeds 80 characters instead of showing
+" column line
+" set colorcolumn=80
+call matchadd('ColorColumn', '\%81v', 100)
 
 " Sensible word wrapping
 set wrap
