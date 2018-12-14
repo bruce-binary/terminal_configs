@@ -25,7 +25,7 @@ Bruce's Ultimate Perl Vim Configuration
    - next/previous string in the prompt's history: `<c-n>, <c-p>`
    - regex mode: `<c-r>`
    - cycle modes: `<c-f> <--> <c-b>`
-   - search buffers: `\t`
+   - search buffers: `\b`
  - Toggle NERDTree: `F5`, in NERDTree:
    - Scope to directory: `C`
    - Go up one directory: `U`
@@ -100,6 +100,25 @@ Errors then show up in the location panel, which you can open `:lopen` and close
 
 ### In normal mode:
  - Search word under cursor: `*`
+ 
+## Across files (Using [CtrlSF](https://github.com/dyng/ctrlsf.vim))
+
+Toggle search panel: `\t`
+
+**CtrlSF Arguments**
+- `-R` - Use regular expression pattern.
+- `-I`, `-S` - Search case-insensitively (`-I`) or case-sensitively (`-S`).
+- `-C`, `-A`, `-B` - Specify how many context lines to be printed, identical to their counterparts in Ag/Ack.
+- `-W` - Only match whole words.
+
+### In insert mode:
+
+ - search something: `\f`
+ - search word under cursor: `\n`
+
+### In visual mode:
+
+ - search selection: `\f`
 
 # Copy Pasting 
 
