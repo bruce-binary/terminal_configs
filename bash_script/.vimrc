@@ -56,7 +56,7 @@ Plugin 'dyng/ctrlsf.vim'
 " Code tags
 Plugin 'majutsushi/tagbar'
 Plugin 'lvht/tagbar-markdown'
-map <Leader>t :CtrlPBuffer<CR>
+map <Leader>b :CtrlPBuffer<CR>
  let g:ctrlp_map = '<C-p>'
  let g:ctrlp_working_path_mode = 0 " don’t manage working directory.
  let g:ctrlp_use_caching = 1
@@ -198,14 +198,11 @@ let g:miniBufExplUseSingleClick = 1
 let g:ctrlsf_auto_focus = {
       \ "at": "start"
       \ }
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+nmap     <Leader>f <Plug>CtrlSFPrompt
+vmap     <Leader>f <Plug>CtrlSFVwordPath
+nmap     <Leader>n <Plug>CtrlSFCwordPath
+nnoremap <Leader>t :CtrlSFToggle<CR>
+inoremap <Leader>t <Esc>:CtrlSFToggle<CR>
 
 let g:vim_markdown_folding_disabled = 1
 
