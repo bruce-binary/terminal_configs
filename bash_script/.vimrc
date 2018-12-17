@@ -195,9 +195,12 @@ let g:tagbar_singleclick = 1
 
 let g:miniBufExplUseSingleClick = 1
 
+" CtrlSF Settings
 let g:ctrlsf_auto_focus = {
       \ "at": "start"
       \ }
+let g:ctrlsf_search_mode = 'async'
+let g:ctrlsf_context = '-A 0 -B 0'
 nmap     <Leader>f <Plug>CtrlSFPrompt
 vmap     <Leader>f <Plug>CtrlSFVwordPath
 nmap     <Leader>n <Plug>CtrlSFCwordPath
