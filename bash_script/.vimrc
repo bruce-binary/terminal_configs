@@ -33,8 +33,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Status line
 Plugin 'vim-airline/vim-airline'
-" Buffer explorer (works with mouse clicks)
-Plugin 'fholgado/minibufexpl.vim'
 Plugin 'BufOnly.vim'
 " HTML Syntax
 Plugin 'othree/html5.vim'
@@ -159,7 +157,7 @@ nmap <F8> :TagbarToggle<CR>
 " NERDTree Settings
 map <F5> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
-let g:NERDTreeMouseMode = 3
+" let g:NERDTreeMouseMode = 3
 
 " NERDCommenter settings
 let g:NERDSpaceDelims = 1
@@ -190,8 +188,8 @@ let g:ale_fix_on_save = 1
 let g:tagbar_singleclick = 1
 
 " Display buffer on top, along with its number
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 let g:miniBufExplUseSingleClick = 1
 
@@ -274,8 +272,10 @@ function! TogglePasteMode()
     if &mouse == 'a'
         " disable mouse
         set mouse=
+        set scl=no
     else
         " enable mouse everywhere
+        set scl=yes
         set mouse=a
     endif
 endfunction
