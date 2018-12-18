@@ -51,6 +51,8 @@ Plugin 'tomasr/molokai'
 " Async Linting
 Plugin 'w0rp/ale'
 Plugin 'dyng/ctrlsf.vim'
+" Perl doc
+Plugin 'aminroosta/perldoc-vim'
 " Code tags
 Plugin 'majutsushi/tagbar'
 Plugin 'lvht/tagbar-markdown'
@@ -152,6 +154,9 @@ set directory=~/.vim/swap//
 " Plugin Config
 """""""""""""""""""
 
+" Perldoc split size
+let g:perldoc_split_modifier = '76v'
+
 nmap <F8> :TagbarToggle<CR>
 
 " NERDTree Settings
@@ -183,7 +188,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 1 " Less distracting when opening a new file
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 
 let g:tagbar_singleclick = 1
 
