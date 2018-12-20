@@ -240,6 +240,7 @@ nmap <F1> <Esc>
 imap <F1> <Esc>
 
 autocmd FileType gitcommit autocmd! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+autocmd BufRead,BufNewFile *.conf setf dosini
 
 " navigate display line when wrap is set
 nnoremap j gj
