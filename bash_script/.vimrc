@@ -111,6 +111,8 @@ set t_Co=256
 set tags=tags;/
 set virtualedit=block
 set wrap
+set wildmenu
+set wildmode=full
 "set nu
 "set spell spelllang=en_us
 
