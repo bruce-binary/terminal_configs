@@ -21,6 +21,8 @@ Plugin 'L9'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " plugin for perl syntax, template toolkit
 Plugin 'vim-perl/vim-perl'
+" Vim PostgreSQL syntax plugin
+Plugin 'lifepillar/pgsql.vim'
 " plugin for javascript syntax
 Plugin 'pangloss/vim-javascript'
 " plugin for json syntax
@@ -213,6 +215,9 @@ nnoremap <Leader>t :CtrlSFToggle<CR>
 inoremap <Leader>t <Esc>:CtrlSFToggle<CR>
 
 let g:vim_markdown_folding_disabled = 1
+
+" Set SQL files to use PgSQL plugin for highlighting
+let g:sql_type_default = 'pgsql'
 
 """"""""""""""""""""""
 " Custom Key Mappings
