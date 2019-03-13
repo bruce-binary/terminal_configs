@@ -92,6 +92,7 @@ set cmdheight=2
 set cursorcolumn
 set cursorline
 set errorformat=\"../../%f\"\\,%*[^0-9]%l:\ %m
+set foldlevelstart=99
 set expandtab
 set hidden
 set number
