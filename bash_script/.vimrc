@@ -156,6 +156,7 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 set undodir=~/.vim/undo//
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
+let $TMPDIR = $HOME.".vim/tmp/"
 
 """""""""""""""""""
 " Plugin Config
