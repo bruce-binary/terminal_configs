@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+set nomodeline " patch for security vulnerability https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
