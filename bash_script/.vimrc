@@ -61,6 +61,7 @@ Plugin 'aminroosta/perldoc-vim'
 " Code tags
 Plugin 'majutsushi/tagbar'
 Plugin 'lvht/tagbar-markdown'
+Plugin 'thaerkh/vim-workspace'
 map <Leader>b :CtrlPBuffer<CR>
  let g:ctrlp_map = '<C-p>'
  let g:ctrlp_working_path_mode = 0 " don’t manage working directory.
@@ -96,7 +97,6 @@ set errorformat=\"../../%f\"\\,%*[^0-9]%l:\ %m
 set foldlevelstart=99
 set expandtab
 set hidden
-set number
 set hlsearch
 set ignorecase
 set incsearch
@@ -223,6 +223,11 @@ let g:vim_markdown_folding_disabled = 1
 " Set SQL files to use PgSQL plugin for highlighting
 let g:sql_type_default = 'pgsql'
 
+" Workspace plugin
+nnoremap <leader>s :ToggleWorkspace<CR>
+let g:workspace_session_directory = $HOME . '/.vim/sessions/'
+let g:workspace_session_disable_on_args = 1
+
 """"""""""""""""""""""
 " Custom Key Mappings
 """"""""""""""""""""""
@@ -286,7 +291,6 @@ function! DoTidy()
 endfun
 
 function! TogglePasteMode()
-    set number!
     if &mouse == 'a'
         " disable mouse
         set mouse=
