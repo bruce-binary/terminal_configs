@@ -18,4 +18,4 @@ mkdir -p ~/.vim/{undo,backup,swap}
 wget -O ~/.vimrc https://raw.githubusercontent.com/brucebinary/terminal_configs/master/bash_script/.vimrc
 
 # Install Vim plugins automatically
-vim -u NONE -c "silent! source ~/.vimrc" +PluginInstall +qall
+vim -u NONE -c "silent! source ~/.vimrc" +PluginInstall +qall!
