@@ -222,9 +222,6 @@ inoremap <Leader>t <Esc>:CtrlSFToggle<CR>
 
 let g:vim_markdown_folding_disabled = 1
 
-" Set SQL files to use PgSQL plugin for highlighting
-let g:sql_type_default = 'pgsql'
-
 " Workspace plugin
 nnoremap <leader>s :ToggleWorkspace<CR>
 let g:workspace_session_directory = $HOME . '/.vim/sessions/'
