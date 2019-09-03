@@ -303,7 +303,10 @@ function! TogglePasteMode()
 endfunction
 
 noremap <F3> :call TogglePasteMode()<CR>
-noremap <Leader>w :Bd<CR>
+" This strange prev next buffer switching is needed
+" because I cannot seem to close consecutive buffers 
+" without it ¯\_(ツ)_/¯
+noremap <Leader>w :bp<CR>:bn<CR>:Bd<CR>
 " Close all buffers except this one
 noremap <Leader>aw :BufOnly<CR>
 
