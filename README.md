@@ -165,3 +165,8 @@ Source `.vimrc`: `\r`
  - Search perl-doc: either `:Perldoc commandname` or `K` on keyword.
  - Remove trailing whitespaces `:FixWhitespace`
  
+
+# Tmux
+
+ - `:set-option mouse off` - turns off mouse mode so you can copy paste
+ - `I` - install plugins
