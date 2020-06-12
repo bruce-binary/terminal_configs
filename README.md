@@ -169,4 +169,5 @@ Source `.vimrc`: `\r`
 # Tmux
 
  - `:set-option mouse off` - turns off mouse mode so you can copy paste
+ - `]` - paste from tmux buffer
  - `I` - install plugins
