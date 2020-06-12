@@ -168,6 +168,17 @@ Source `.vimrc`: `\r`
 
 # Tmux
 
+ - `:set-window-option -g mode-keys vi` - vi or emacs (default) mode
  - `:set-option mouse off` - turns off mouse mode so you can copy paste
  - `]` - paste from tmux buffer
+ - `%` - split horizontal
+ - `"` - split vertical
+ - `,` - rename window
  - `I` - install plugins
+ 
+## Copy Paste Mode
+
+In mouse mode, scroll to enter
+
+ - `/ v--^ ?` - find in window (vi)
+ - `c-s v--^ c-r` - find in window (emacs)
