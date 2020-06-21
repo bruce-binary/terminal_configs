@@ -315,3 +315,6 @@ noremap <Leader>aw :BufOnly<CR>
 """""""""""""""""""
 
 color molokai
+
+hi Normal guibg=NONE ctermbg=NONE
+
