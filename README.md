@@ -168,13 +168,16 @@ Source `.vimrc`: `\r`
 
 # Tmux
 
+Need to install TPM to use plugins: https://github.com/tmux-plugins/tpm - then `I` to install them
+
  - `:set-window-option -g mode-keys vi` - vi or emacs (default) mode
  - `:set-option mouse off` - turns off mouse mode so you can copy paste
+ - `M|m` - on/off mouse mode
+ - `ctrl-s` - Save tmux session
  - `]` - paste from tmux buffer
  - `%` - split horizontal
  - `"` - split vertical
  - `,` - rename window
- - `I` - install plugins
  
 ## Copy Paste Mode
 
