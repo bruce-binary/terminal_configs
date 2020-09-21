@@ -133,6 +133,8 @@ Copy the whole file: leave vim and use `cat filename`, then copy from terminal.
 
 If your vim doesn't copy to clipboard, a hack is to copy from the terminal. `<F3>` disables mouse input and line numbers, but allows you to select the text to copy. Press `<F3` to toggle back again.
 
+If you don't have `<F3>` hack, use `set mouse-=a` and reenable with `set mouse=a`.
+
 # Selecting
 
 Select inner block of matching brace: `vi{`
