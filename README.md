@@ -1,6 +1,12 @@
 Bruce's Ultimate Perl Vim Configuration
 ===================================
 
+# Install
+
+```bash
+wget https://raw.githubusercontent.com/brucebinary/terminal_configs/master/bash_script/vim_config.sh && bash vim_config.sh
+```
+
 # Vim App
 
  - Save (write): `:w`
