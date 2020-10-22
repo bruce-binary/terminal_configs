@@ -1,8 +1,5 @@
 #!/bin/bash
 
-sudo apt-get install -y exuberant-ctags
-ctags -R /home/git/regentmarkets/
-
 vundle=~/.vim/bundle/Vundle.vim
 
 if [[ ! "$(ls -A $vundle)" ]]; then
